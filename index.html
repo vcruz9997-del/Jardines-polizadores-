@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce los jardines polinizadores, las plantas que atraen polinizadores y cómo crear espacios para cuidar la biodiversidad.">
+  <title>Jardines Polinizadores</title>
+
+  <style>
+    :root {
+      --rojo: #8B174D;
+      --morado: #6D28A8;
+      --rosa: #D94670;
+      --lila: #F1E6FA;
+      --blanco: #FFFFFF;
+      --texto: #35213A;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #FFF9FC;
+      color: var(--texto);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(120deg, var(--rojo), var(--morado));
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #FFD6E7;
+    }
+
+    .portada {
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 75px 8%;
+      color: white;
+      background:
+        linear-gradient(135deg, rgba(92, 12, 63, .88),
+        rgba(83, 27, 139, .83)),
+        url("jar2/1.jpg") center/cover;
+    }
+
+    .portada h1 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .portada p {
+      font-size: 1.15rem;
+      max-width: 760px;
+      margin: 0 auto 25px;
+    }
+
+    .boton {
+      display: inline-block;
+      background: var(--rosa);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 8px;
+      transition: transform .2s, background .2s;
+    }
+
+    .boton:hover {
+      background: var(--rojo);
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 65px 7%;
+      scroll-margin-top: 20px;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: var(--rojo);
+      margin-bottom: 15px;
+    }
+
+    .introduccion {
+      max-width: 850px;
+      margin: 0 auto 35px;
+      text-align: center;
+    }
+
+    .fondo-lila {
+      background: var(--lila);
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .tarjeta {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px rgba(70, 25, 80, .12);
+      transition: transform .2s;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-5px);
+    }
+
+    .tarjeta img {
+      display: block;
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      background: var(--lila);
+    }
+
+    .contenido-tarjeta {
+      padding: 20px;
+    }
+
+    .contenido-tarjeta h3 {
+      color: var(--morado);
+      margin-bottom: 9px;
+    }
+
+    .numero {
+      color: var(--rosa);
+      font-weight: bold;
+    }
+
+    .recursos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .recurso {
+      background: white;
+      border: 2px solid #E6D0F4;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .recurso .icono {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+
+    .recurso h3 {
+      color: var(--morado);
+      margin-bottom: 10px;
+    }
+
+    audio,
+    video {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .video-contenedor {
+      max-width: 850px;
+      margin: 30px auto 0;
+      background: white;
+      padding: 15px;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(70, 25, 80, .12);
+    }
+
+    .video-contenedor video {
+      display: block;
+      max-height: 480px;
+      border-radius: 10px;
+      background: #21152A;
+    }
+
+    .descarga {
+      display: inline-block;
+      color: var(--morado);
+      font-weight: bold;
+      margin-top: 12px;
+      text-decoration: none;
+    }
+
+    .descarga:hover {
+      color: var(--rojo);
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #391332;
+      color: white;
+      text-align: center;
+      padding: 30px 7%;
+    }
+
+    footer p + p {
+      margin-top: 5px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      section {
+        padding: 45px 5%;
+      }
+
+      .portada {
+        min-height: 380px;
+        padding: 55px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🌺 Jardines Polinizadores</div>
+
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#plantas">Plantas</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#video">Video</a>
+      <a href="#recursos">Archivos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="portada" id="inicio">
+      <div>
+        <h1>Jardines Polinizadores</h1>
+        <p>
+          Pequeños espacios, grandes cambios. Descubre cómo las plantas
+          con flores ayudan a atraer polinizadores y contribuyen al cuidado
+          de la biodiversidad.
+        </p>
+        <a class="boton" href="#proceso">Conoce nuestro proyecto</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>¿Qué es un jardín polinizador?</h2>
+      <p class="introduccion">
+        Es un espacio con plantas que ofrecen néctar, polen y refugio a
+        animales como abejas, mariposas y otros polinizadores. Crear uno
+        ayuda a favorecer la biodiversidad y a valorar la importancia de
+        las plantas en nuestro entorno.
+      </p>
+    </section>
+
+    <section class="fondo-lila" id="proceso">
+      <h2>🌱 Preparación del jardín</h2>
+      <p class="introduccion">
+        Conoce las etapas de preparación del terreno para establecer
+        nuestro jardín polinizador. Cada fotografía muestra una parte
+        del trabajo realizado.
+      </p>
+
+      <div class="galeria">
+        <article class="tarjeta">
+          <img src="1.jpg" alt="Primera etapa de preparación del terreno" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 1</span>
+            <h3>Reconocimiento del espacio</h3>
+            <p>Se observa el área disponible para identificar el lugar donde se instalará el jardín y planear su distribución.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="2.jpg" alt="Segunda etapa del trabajo en el terreno" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 2</span>
+            <h3>Limpieza inicial</h3>
+            <p>Se retiran los residuos y los materiales que puedan obstaculizar la preparación del espacio.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="3.jpg" alt="Tercera etapa de preparación de la tierra" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 3</span>
+            <h3>Preparación del suelo</h3>
+            <p>Se trabaja la superficie para facilitar el establecimiento de las plantas y mejorar las condiciones de crecimiento.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="4.jpg" alt="Cuarta etapa de organización del jardín" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 4</span>
+            <h3>Organización del área</h3>
+            <p>Se define dónde colocar las plantas, considerando el espacio disponible y las necesidades de cada especie.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="5.jpg" alt="Quinta etapa de acondicionamiento del jardín" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 5</span>
+            <h3>Acondicionamiento</h3>
+            <p>Se realizan los ajustes necesarios para dejar el terreno preparado antes de colocar las plantas.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="6.jpg" alt="Sexta etapa del proyecto de jardín" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 6</span>
+            <h3>Preparación final</h3>
+            <p>Se revisa el espacio y se completan las tareas pendientes para continuar con la instalación del jardín.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="7.jpg" alt="Séptima etapa del trabajo de jardinería" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 7</span>
+            <h3>Distribución de las plantas</h3>
+            <p>Se planea la ubicación de las plantas para aprovechar el espacio y crear un entorno con flores atractivas para los polinizadores.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="8.jpg" alt="Octava etapa de preparación del jardín polinizador" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 8</span>
+            <h3>Espacio listo para plantar</h3>
+            <p>Se concluye la preparación del área para avanzar hacia el establecimiento y cuidado de las especies seleccionadas.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="plantas">
+      <h2>🌸 Las plantas de nuestro jardín</h2>
+      <p class="introduccion">
+        La bugambilia y la lantana aportan color al jardín. Sus flores
+        pueden contribuir a atraer distintos visitantes, dependiendo de
+        la especie, la temporada y las condiciones del lugar.
+      </p>
+
+      <div class="galeria">
+        <article class="tarjeta">
+          <img src="10.jpg" alt="Vista de las plantas del jardín polinizador" loading="lazy">
+          <div class="contenido-tarjeta">
+            <h3>El jardín en conjunto</h3>
+            <p>Esta fotografía muestra las plantas reunidas para formar un espacio lleno de color. La combinación de especies y flores puede ofrecer recursos a los polinizadores durante distintas épocas del año.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="11.jpg" alt="Planta de bugambilia" loading="lazy">
+          <div class="contenido-tarjeta">
+            <h3>Bugambilia</h3>
+            <p>La bugambilia es una planta ornamental conocida por sus brácteas de colores intensos, como rosa, magenta y morado. Sus pequeñas flores verdaderas se encuentran en el centro de estas estructuras. Aporta color y puede complementar un jardín para polinizadores.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="12.jpg" alt="Planta de lantana" loading="lazy">
+          <div class="contenido-tarjeta">
+            <h3>Lantana</h3>
+            <p>La lantana produce agrupaciones de pequeñas flores que pueden presentar varios colores. Dependiendo de la especie y de las condiciones locales, sus flores pueden proporcionar néctar a mariposas y otros visitantes florales.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="fondo-lila" id="podcast">
+      <h2>🎧 Podcast: voces del jardín</h2>
+      <p class="introduccion">
+        Escucha nuestros audios para conocer más sobre los jardines
+        polinizadores, las plantas y la importancia de cuidar el ambiente.
+      </p>
+
+      <div class="recursos">
+        <article class="recurso">
+          <div class="icono">🎙️</div>
+          <h3>Podcast 1</h3>
+          <p>Introducción a los jardines polinizadores.</p>
+          <audio controls preload="metadata">
+            <source src="jardin.mp3" type="audio/mpeg">
+            Tu navegador no puede reproducir este audio.
+          </audio>
+
+        </article>
+      </div>
+    </section>
+
+    <section id="video">
+      <h2>🎬 Video del proyecto</h2>
+      <p class="introduccion">
+        Mira el video para conocer más sobre el proceso y las actividades
+        realizadas para crear el jardín polinizador.
+      </p>
+
+      <div class="video-contenedor">
+        <video controls preload="metadata" poster="10.jpg">
+          <source src="archivos/video.mp4" type="video/mp4">
+          Tu navegador no puede reproducir este video.
+        </video>
+        <p>Video: preparación y desarrollo del jardín polinizador.</p>
+      </div>
+    </section>
+
+    <section class="fondo-lila" id="recursos">
+      <h2>📚 Materiales para descargar</h2>
+      <p class="introduccion">
+        Consulta y descarga documentos complementarios sobre el proyecto.
+      </p>
+
+      <div class="recursos">
+        <article class="recurso">
+          <div class="icono">📄</div>
+          <h3>Documento PDF</h3>
+          <p>Información y actividades del jardín polinizador.</p>
+          <a class="descarga" href="Jardin.pdf" download>
+            Descargar PDF
+          </a>
+        </article>
+
+        <article class="recurso">
+          <div class="icono">🌿</div>
+          <h3>Material complementario</h3>
+          <p>Descarga una ficha informativa sobre las plantas del jardín.</p>
+          <a class="descarga" href="archivos/plantas.pdf" download>
+            Descargar ficha
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>💜 Cuidemos a los polinizadores</h2>
+      <p class="introduccion">
+        Plantar especies adecuadas para nuestra región, cuidar las flores,
+        evitar el uso innecesario de pesticidas y mantener espacios verdes
+        saludables son acciones que ayudan a proteger la biodiversidad.
+        Cada jardín puede convertirse en una oportunidad para aprender y
+        contribuir al cuidado de la naturaleza.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Jardines Polinizadores</strong></p>
+    <p>Un espacio para aprender, florecer y cuidar la biodiversidad. 🌺</p>
+  </footer>
+
+</body>
+</html>
