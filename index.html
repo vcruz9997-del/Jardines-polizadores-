@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -198,6 +199,7 @@
 
     audio,
     video {
+      display: block;
       width: 100%;
       margin-top: 15px;
     }
@@ -212,10 +214,17 @@
     }
 
     .video-contenedor video {
-      display: block;
+      width: 100%;
+      height: auto;
       max-height: 480px;
+      display: block;
       border-radius: 10px;
       background: #21152A;
+      object-fit: contain;
+    }
+
+    .video-contenedor p {
+      margin-top: 12px;
     }
 
     .descarga {
@@ -280,6 +289,8 @@
   </header>
 
   <main>
+
+    <!-- PORTADA -->
     <section class="portada" id="inicio">
       <div>
         <h1>Jardines Polinizadores</h1>
@@ -292,6 +303,7 @@
       </div>
     </section>
 
+    <!-- INTRODUCCIÓN -->
     <section>
       <h2>¿Qué es un jardín polinizador?</h2>
       <p class="introduccion">
@@ -302,6 +314,7 @@
       </p>
     </section>
 
+    <!-- PROCESO -->
     <section class="fondo-lila" id="proceso">
       <h2>🌱 Preparación del jardín</h2>
       <p class="introduccion">
@@ -311,6 +324,7 @@
       </p>
 
       <div class="galeria">
+
         <article class="tarjeta">
           <img src="1.jpg" alt="Primera etapa de preparación del terreno" loading="lazy">
           <div class="contenido-tarjeta">
@@ -382,9 +396,11 @@
             <p>Se concluye la preparación del área para avanzar hacia el establecimiento y cuidado de las especies seleccionadas.</p>
           </div>
         </article>
+
       </div>
     </section>
 
+    <!-- PLANTAS -->
     <section id="plantas">
       <h2>🌸 Las plantas de nuestro jardín</h2>
       <p class="introduccion">
@@ -394,6 +410,7 @@
       </p>
 
       <div class="galeria">
+
         <article class="tarjeta">
           <img src="10.jpg" alt="Vista de las plantas del jardín polinizador" loading="lazy">
           <div class="contenido-tarjeta">
@@ -417,9 +434,11 @@
             <p>La lantana produce agrupaciones de pequeñas flores que pueden presentar varios colores. Dependiendo de la especie y de las condiciones locales, sus flores pueden proporcionar néctar a mariposas y otros visitantes florales.</p>
           </div>
         </article>
+
       </div>
     </section>
 
+    <!-- PODCAST -->
     <section class="fondo-lila" id="podcast">
       <h2>🎧 Podcast: voces del jardín</h2>
       <p class="introduccion">
@@ -432,15 +451,16 @@
           <div class="icono">🎙️</div>
           <h3>Podcast 1</h3>
           <p>Introducción a los jardines polinizadores.</p>
+
           <audio controls preload="metadata">
             <source src="jardin.mp3" type="audio/mpeg">
             Tu navegador no puede reproducir este audio.
           </audio>
-
         </article>
       </div>
     </section>
 
+    <!-- VIDEO: CÓDIGO CORREGIDO -->
     <section id="video">
       <h2>🎬 Video del proyecto</h2>
       <p class="introduccion">
@@ -449,14 +469,22 @@
       </p>
 
       <div class="video-contenedor">
-        <video controls preload="metadata" poster="10.jpg">
-          <source src="Video.mp4" type="video">
+        <video
+          controls
+          preload="metadata"
+          playsinline
+          aria-label="Video del proyecto Jardines Polinizadores"
+        >
+          <source src="jar.mp4" type="video/mp4">
           Tu navegador no puede reproducir este video.
+          <a href="jar.mp4">Intenta abrir o descargar el video aquí.</a>
         </video>
+
         <p>Video: preparación y desarrollo del jardín polinizador.</p>
       </div>
     </section>
 
+    <!-- ARCHIVOS -->
     <section class="fondo-lila" id="recursos">
       <h2>📚 Materiales para descargar</h2>
       <p class="introduccion">
@@ -464,6 +492,7 @@
       </p>
 
       <div class="recursos">
+
         <article class="recurso">
           <div class="icono">📄</div>
           <h3>Documento PDF</h3>
@@ -477,13 +506,15 @@
           <div class="icono">🌿</div>
           <h3>Material complementario</h3>
           <p>Descarga una ficha informativa sobre las plantas del jardín.</p>
-          <a class="descarga" href="archivos/plantas.pdf" download>
+          <a class="descarga" href="plantas.pdf" download>
             Descargar ficha
           </a>
         </article>
+
       </div>
     </section>
 
+    <!-- CONCLUSIÓN -->
     <section>
       <h2>💜 Cuidemos a los polinizadores</h2>
       <p class="introduccion">
@@ -494,8 +525,10 @@
         contribuir al cuidado de la naturaleza.
       </p>
     </section>
+
   </main>
 
+  <!-- PIE DE PÁGINA -->
   <footer>
     <p><strong>Jardines Polinizadores</strong></p>
     <p>Un espacio para aprender, florecer y cuidar la biodiversidad. 🌺</p>
