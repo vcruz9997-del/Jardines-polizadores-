@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -167,6 +168,10 @@
       margin-bottom: 9px;
     }
 
+    .contenido-tarjeta p + p {
+      margin-top: 12px;
+    }
+
     .numero {
       color: var(--rosa);
       font-weight: bold;
@@ -240,6 +245,52 @@
       text-decoration: underline;
     }
 
+    /* NOTICIA DE ROBÓTICA */
+    .noticia-robotica {
+      max-width: 850px;
+      margin: 30px auto 0;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px rgba(70, 25, 80, .12);
+    }
+
+    .noticia-robotica img {
+      display: block;
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      background: #E6D0F4;
+    }
+
+    .etiqueta-noticia {
+      display: inline-block;
+      background: #FCE4EF;
+      color: var(--rojo);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: .85rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .noticia-robotica h3 {
+      color: var(--morado);
+      font-size: 1.5rem;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .noticia-robotica p + p {
+      margin-top: 12px;
+    }
+
+    .frase-noticia {
+      color: var(--rojo);
+      font-weight: bold;
+      margin-top: 18px !important;
+    }
+
     footer {
       background: #391332;
       color: white;
@@ -268,6 +319,14 @@
       .portada {
         min-height: 380px;
         padding: 55px 6%;
+      }
+
+      .noticia-robotica img {
+        height: 220px;
+      }
+
+      .noticia-robotica h3 {
+        font-size: 1.25rem;
       }
     }
   </style>
@@ -460,7 +519,7 @@
       </div>
     </section>
 
-    <!-- VIDEO: CÓDIGO CORREGIDO -->
+    <!-- VIDEO -->
     <section id="video">
       <h2>🎬 Video del proyecto</h2>
       <p class="introduccion">
@@ -468,22 +527,20 @@
         realizadas para crear el jardín polinizador.
       </p>
 
-<div class="video-contenedor">
-  <video controls preload="metadata" playsinline>
-    <source src="./jar.mp4" type="video/mp4">
-    Tu navegador no puede reproducir este video.
-  </video>
+      <div class="video-contenedor">
+        <video controls preload="metadata" playsinline>
+          <source src="./jar.mp4" type="video/mp4">
+          Tu navegador no puede reproducir este video.
+        </video>
 
-  <p>Video: preparación y desarrollo del jardín polinizador.</p>
+        <p>Video: preparación y desarrollo del jardín polinizador.</p>
 
-  <p>
-    <a href="./jar.mp4" target="_blank">
-      Abrir video directamente
-    </a>
-  </p>
-</div>
-
-     
+        <p>
+          <a href="./jar.mp4" target="_blank" rel="noopener noreferrer">
+            Abrir video directamente
+          </a>
+        </p>
+      </div>
     </section>
 
     <!-- ARCHIVOS -->
@@ -498,7 +555,7 @@
         <article class="recurso">
           <div class="icono">📄</div>
           <h3>Documento PDF</h3>
-          <p>Información y actividades del jardín polinizador.</p>
+          <p>Diapositivas del jardin polinizador.</p>
           <a class="descarga" href="Jardin.pdf" download>
             Descargar PDF
           </a>
@@ -507,7 +564,7 @@
         <article class="recurso">
           <div class="icono">🌿</div>
           <h3>Material complementario</h3>
-          <p>Descarga una ficha informativa sobre las plantas del jardín.</p>
+          <p>Descarga de folleto de informacion complementaria.</p>
           <a class="descarga" href="plantas.pdf" download>
             Descargar ficha
           </a>
@@ -527,6 +584,186 @@
         contribuir al cuidado de la naturaleza.
       </p>
     </section>
+
+    <!-- NOTICIA DE ROBÓTICA: AL FINAL DE LA PÁGINA -->
+    <section class="fondo-lila" id="noticias">
+      <h2>🤖 Noticias escolares: jóvenes en la robótica</h2>
+
+      <p class="introduccion">
+        La tecnología, la creatividad y el aprendizaje también forman
+        parte de las experiencias de los estudiantes de preparatoria.
+      </p>
+
+      <article class="noticia-robotica">
+
+        <!--
+          Coloca una imagen llamada robots.jpg en la misma carpeta
+          que este archivo HTML para que aparezca aquí.
+        -->
+        <img
+          src="robots.jpg"
+          alt="Estudiantes de preparatoria trabajando en la creación de robots"
+          loading="lazy"
+        >
+
+        <div class="contenido-tarjeta">
+          <span class="etiqueta-noticia">TECNOLOGÍA E INNOVACIÓN</span>
+
+          <h3>
+            Estudiantes de preparatoria descubren el mundo de la robótica
+          </h3>
+
+          <p>
+            Los estudiantes de preparatoria están aprendiendo a crear
+            y programar sus propios robots, explorando nuevas formas
+            de utilizar la tecnología para resolver problemas.
+          </p>
+
+          <p>
+            Durante estas actividades, conocen el funcionamiento de
+            motores, sensores y circuitos electrónicos. También
+            desarrollan habilidades de programación, pensamiento
+            lógico, creatividad y trabajo en equipo.
+          </p>
+
+          <p>
+            Estas experiencias les permiten aprender de manera
+            práctica y divertida, al mismo tiempo que despiertan
+            su interés por la ciencia, la ingeniería y la innovación
+            tecnológica.
+          </p>
+
+          <p class="frase-noticia">
+            ¡La tecnología también se aprende creando! 🚀
+          </p>
+        </div>
+
+      </article>
+    </section>
+    <!-- FIN DE LA NOTICIA -->
+    
+
+    <!-- PODCAST SOBRE ROBÓTICA -->
+    <section id="podcast-robotica">
+      <h2>🎙️ Podcast: aprendiendo sobre robótica</h2>
+
+      <p class="introduccion">
+        Escucha nuestro podcast para conocer lo que aprendemos
+        al crear robots, cómo funciona la tecnología y por qué
+        la robótica es importante para el futuro.
+      </p>
+
+      <div class="recursos">
+        <article class="recurso">
+          <div class="icono">🤖</div>
+          <h3>La robótica en nuestra preparatoria</h3>
+
+          <p>
+            En este audio hablamos sobre los robots
+          </p>
+
+          <audio controls preload="metadata">
+            <source src="robotica.mp3" type="audio/mpeg">
+            Tu navegador no puede reproducir este audio.
+          </audio>
+
+          <p>
+            <a class="descarga" href="robotica.mp3" download>
+              Descargar podcast
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- VIDEO SOBRE DRONES -->
+    <section class="fondo-lila" id="video-dron">
+      <h2>🚁 Descubriendo el mundo de los drones</h2>
+
+      <p class="introduccion">
+        Los drones son dispositivos tecnológicos que pueden
+        controlarse a distancia o realizar vuelos programados.
+        Se utilizan en fotografía aérea, agricultura, investigación
+        y muchas otras actividades.
+      </p>
+
+      <div class="video-contenedor">
+        <video controls preload="metadata" playsinline>
+          <source src="dron.mp4" type="video/mp4">
+          Tu navegador no puede reproducir este video.
+        </video>
+
+        <p>
+          Video educativo sobre los drones, su funcionamiento
+          y sus aplicaciones en la tecnología.
+        </p>
+
+        <p>
+          <a
+            class="descarga"
+            href="https://www.educ.ar/recursos/150595/microaprendizaje-que-es-un-dron"
+            target="_blank"
+            rel="noopener noreferrer">
+            📺 Conocer qué es un dron
+          </a>
+        </p>
+      </div>
+    </section>
+    <!-- FIN DEL PODCAST Y VIDEO -->
+    
+    
+    
+    
+    
+
+
+    <!-- CRÉDITOS DEL PROYECTO -->
+    <section class="fondo-lila" id="creditos">
+      <h2>🌺 Créditos del proyecto</h2>
+
+      <p class="introduccion">
+        Este sitio web fue realizado como parte del proyecto
+        Jardines Polinizadores, con la finalidad de aprender sobre
+        la biodiversidad y promover el cuidado del medio ambiente.
+      </p>
+
+      <div class="recursos">
+
+        <!-- PROFESORAS -->
+        <article class="recurso">
+          <div class="icono">👩‍🏫</div>
+          <h3>Profesoras a cargo del proyecto</h3>
+
+          <p>Jannet Pérez Tlapalcoyoa</p>
+          <p>Maria Camelia Arenas Mendoza</p>
+          <p>Vanessa Pérez Amador</p>
+          <p>Edith Pérez Jaramillo</p>
+        </article>
+
+        <!-- ALUMNOS -->
+        <article class="recurso">
+          <div class="icono">💻</div>
+          <h3>Alumnos creadores de la página web</h3>
+
+          <p>Victor Manuel Cruz Mendez</p>
+          <p>Luis Manuel Morales Hernández</p>
+          <p>Jose Antonio Pineda Pérez</p>
+
+          <p style="margin-top: 18px;">
+            <strong>Grado y grupo: 5.º D</strong>
+          </p>
+        </article>
+
+      </div>
+
+      <p class="introduccion" style="margin-top: 30px; margin-bottom: 0;">
+        Un proyecto de aprendizaje, colaboración y cuidado de la
+        biodiversidad. 💜
+      </p>
+    </section>
+    <!-- FIN DE LOS CRÉDITOS -->
+
+
 
   </main>
 
